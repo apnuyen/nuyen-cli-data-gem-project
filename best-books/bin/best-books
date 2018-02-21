@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby 
+
+require './lib/best_books'
+BestBooks::CLI.new.call 
