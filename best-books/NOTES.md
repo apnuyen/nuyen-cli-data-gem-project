@@ -15,9 +15,17 @@ best-books (maybe top 100 of all time from the NYTimes)
 (maybe remove this level) Chooses a year
 List of books comes out
 
-User can learn more about an individual book (Author, pages, genre, date published)
+User can learn more about an individual book (Author, date published)
 
 NYTIMES 
 https://www.nytimes.com/interactive/2017/books/review/10-best-books-2017.html 
 
 WAPO https://www.washingtonpost.com/graphics/2017/entertainment/best-books/?utm_term=.e72a6350dad4 
+
+What is a best book?
+Has a name
+An author
+A review link
+Genre
+Publisher and Price
+

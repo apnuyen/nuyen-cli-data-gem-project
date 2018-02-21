@@ -8,21 +8,24 @@ class BestBooks::CLI
 	def list_books 
 		# list the top 10 books here as a list
 		puts "The 10 Best Books of 2017:"
+		@books = BestBooks::Book.all
+		@books.each.with_index(1) do |book, i|
+			puts "#{i}. #{book.name} - #{book.author}"
+		end 
 	end 
 
 	def menu 
-		puts "Enter the number of the book you would like more info on or type list to see the list again or type exit to exit:"
 		input = nil
 		while input != "exit"
-			inputs = gets.strip.downcase
-			case input 
-			when "1"
-				puts "More info on book 1..."
-			when "2"
-				puts "More info on book 2..."
-			when "list"
+			puts "Enter the number of the book you would like more info on or type list to see the list again or type exit to exit:"
+			input = gets.strip.downcase
+
+			if input.to_i > 0
+				the_book = @books[input.to_i-1]
+				puts "#{the_book.name} - #{the_book.author}"
+			elsif input == "list"
 				list_books
-			else 
+			else
 				puts "Not sure what you want. Please enter a book number or 'list' to see the list again."
 			end 
 		end 
