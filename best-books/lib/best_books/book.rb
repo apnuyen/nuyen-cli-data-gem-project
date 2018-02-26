@@ -1,29 +1,26 @@
-class BestBooks::Book 
+class Book 
 	attr_accessor :name, :author, :url, :genre
 
-	def self.all 
-		# Scrape NYTIMES page and return books based on that data
-		self.scrape_bestlist 
-	end 
+	@@all = []
 
-	def self.scrape_bestlist 
-		# go to nytimes page, find the books, extract the properties, instantiate a book
-		# ends up with array of books
-		books = []
+	def initialize(book_hash)
+		book_hash.each do |key, value|
+			unless value == ""
+				self.send("#{key}=", value)
+			end
+		end 
+		@@all << self 
+	end
 
-		doc = Nokogiri::HTML(open("https://www.nytimes.com/interactive/2017/books/review/10-best-books-2017.html")) 
+	def self.create_from_collection(books_array)
+    	books_array.each do |hash|
+    		unless hash[:name] == ""  
+    			Book.new(hash)
+    		end 
+  		end
+	end
 
-		book = self.new
-		
-		book.name = doc.search("div.listy_headline").text
-		book.author = doc.search('div.listy_subhead').text.gsub("By", "").strip
-		book.genre = doc.search("div.listy_kicker").text
-		book.url = doc.search("div.listy_body a").first.attr('href') 
-		 
-		book
-
-		books << book
-
-	end 
-
+  	def self.all
+    	@@all
+  	end 
 end 

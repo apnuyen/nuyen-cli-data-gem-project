@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby 
+
+#require './lib/best_books'
+#BestBooks::CLI.new.call 
+
+require_relative "../lib/best_books/command_line_interface.rb"
+
+
+CommandLineInterface.new.run

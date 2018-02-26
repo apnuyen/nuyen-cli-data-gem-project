@@ -1,5 +1,3 @@
-module Best
-  module Books
+module BestBooks
     VERSION = "0.1.0"
-  end
 end
