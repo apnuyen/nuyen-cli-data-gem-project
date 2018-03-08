@@ -1,17 +1,16 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "best/books/version"
+require "best_books/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "best-books"
-  spec.version       = Best::Books::VERSION
+  spec.version       = BestBooks::VERSION
   spec.authors       = ["An Nuyen"]
   spec.email         = ["annuyen@gmail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because RubyGems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{This application shows you a list of the best book of 2017, according to the New York Times. After viewing the list, you can select a book and view more details about it.}
+  spec.homepage      = "https://github.com/apnuyen/nuyen-cli-data-gem-project/tree/master/best-books"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'

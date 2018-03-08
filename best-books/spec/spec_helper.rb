@@ -1,5 +1,5 @@
 require "bundler/setup"
-require "best/books"
+require "best_books"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
