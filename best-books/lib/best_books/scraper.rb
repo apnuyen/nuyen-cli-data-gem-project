@@ -14,7 +14,7 @@ class Scraper
         :genre => book.search("div.listy_kicker").text.strip,
         :url => book.search("div.listy_body a").map { |link| link['href'] }
       }
-      books << info
+      books << info 
     end
     new_array = books.delete_if { |h| h["name"] == "" }
   end
