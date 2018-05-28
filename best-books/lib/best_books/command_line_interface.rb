@@ -10,7 +10,6 @@ class CommandLineInterface
   def run
     make_books
     start
-    pry
   end
 
   def make_books
@@ -60,10 +59,14 @@ class CommandLineInterface
         elsif input.to_i == 0
           if book = Book.find_by_name(input)
             book_info(book)
+          elsif input != 'exit'
+            puts "Sorry, I don't seem to understand your request"
           end
         elsif input.to_i > 0
           if book = Book.find(input.to_i)
             book_info(book)
+          elsif input != 'exit'
+            puts "Sorry, I don't seem to understand your request"
           end
         end
       end
