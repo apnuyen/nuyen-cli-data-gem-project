@@ -1,9 +1,3 @@
-require_relative "../best_books/scraper.rb"
-require_relative "../best_books/book.rb"
-require 'nokogiri'
-require 'colorize'
-require 'certified'
-
 class CommandLineInterface
   BASE_PATH = "https://www.nytimes.com/interactive/2017/books/review/10-best-books-2017.html"
 
