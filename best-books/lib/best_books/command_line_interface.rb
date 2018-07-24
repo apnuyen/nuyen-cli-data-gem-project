@@ -2,14 +2,14 @@ class CommandLineInterface
   BASE_PATH = "https://www.nytimes.com/interactive/2017/books/review/10-best-books-2017.html"
 
   def run
-    make_books
+#    make_books
     start
   end
 
-  def make_books
-    books_array = Scraper.scrape_index_page(BASE_PATH)
-    Book.create_from_collection(books_array) 
-  end
+  #def make_books
+   # Scraper.scrape_index_page(BASE_PATH)
+#    Book.create_from_collection(books_array) 
+  #end
 
   def display_books
     puts ""
@@ -38,6 +38,8 @@ class CommandLineInterface
   end 
 
   def start
+    #additional single line below
+    Scraper.scrape_index_page(BASE_PATH)
       display_books
       input = nil
       while input != "exit"

@@ -2,7 +2,7 @@ class Scraper
 
   def self.scrape_index_page(index_url)
     index_doc = Nokogiri::HTML(open(index_url))
-#    books = []
+    books = []
     index_doc.css(".row.list_item.clearfix").each do |book|
       info = {
         :name => book.search('div.listy_headline').text.strip,
@@ -10,10 +10,16 @@ class Scraper
         :genre => book.search("div.listy_kicker").text.strip,
         :url => book.search("div.listy_body a").map { |link| link['href'] }
       }
-      # refactor below
-      Book.new(info) 
+
+     books << info
+
     end
-#    new_array = books.delete_if { |h| h["name"] == "" }
+    books
+    Book.create_from_collection(books) 
+
+    #new_array = books.delete_if { |h| h["name"] == "" }
+
   end
 
 end
+

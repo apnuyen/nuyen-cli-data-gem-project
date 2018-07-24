@@ -3,9 +3,9 @@ require "nokogiri"
 require 'pry'
 require 'certified'
 
-require_relative "best_books/version"
-require_relative "best_books/book"
-require_relative 'best_books/command_line_interface'
+require_relative 'best_books/scraper.rb'
+require_relative 'best_books/book.rb'
+
 
 module BestBooks 
 end 

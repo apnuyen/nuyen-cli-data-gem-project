@@ -1,7 +1,15 @@
 source "https://rubygems.org"
 
-# Specify your gem's dependencies in best-books.gemspec
-gemspec
-
-gem 'best-books'
+gem 'rake'
+gem 'require_all'
+gem 'sqlite3'
+gem 'thin'
+gem 'shotgun'
+gem 'pry'
+gem 'bcrypt'
+gem "tux"
+gem 'rack-flash3'
+gem 'bundler'
+gem 'rspec'
+gem 'Nokogiri'
 

@@ -12,9 +12,9 @@ class Book
 		@@all << self 
 	end
 
-	def self.create_from_collection(books_array)
-    	books_array.each do |hash|
-    		unless hash[:name] == ""  
+	def self.create_from_collection(collection)
+    	collection.each do |hash|
+    		unless hash[:name] == "" 
     			Book.new(hash)
     		end 
   		end
