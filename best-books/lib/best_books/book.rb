@@ -13,25 +13,25 @@ class Book
 	end
 
 	def self.create_from_collection(collection)
-    	collection.each do |hash|
-    		unless hash[:name] == "" 
-    			Book.new(hash)
-    		end 
-  		end
+    collection.each do |hash|
+    	unless hash[:name] == "" 
+    		Book.new(hash)
+    	end 
+  	end
 	end
 
-  	def self.all
-    	@@all
-  	end 
+  def self.all
+  	@@all
+  end 
 
-  	def self.find(id)
-    	self.all[id-1]
-  	end
+  def self.find(id)
+  	self.all[id-1]
+  end
 
-  	def self.find_by_name(name)
-    	self.all.detect do |m|
-      		m.name.downcase.strip == name.downcase.strip ||
-     		m.name.split("(").first.strip.downcase == name.downcase.strip
-    	end
+  def self.find_by_name(name)
+  	self.all.detect do |m|
+    		m.name.downcase.strip == name.downcase.strip ||
+   		m.name.split("(").first.strip.downcase == name.downcase.strip
   	end
+  end
 end 

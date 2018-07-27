@@ -2,13 +2,13 @@ class CommandLineInterface
   BASE_PATH = "https://www.nytimes.com/interactive/2017/books/review/10-best-books-2017.html"
 
   def run
-#    make_books
+#   make_books
     start
   end
 
   #def make_books
    # Scraper.scrape_index_page(BASE_PATH)
-#    Book.create_from_collection(books_array) 
+#  Book.create_from_collection(books_array) 
   #end
 
   def display_books
@@ -16,7 +16,7 @@ class CommandLineInterface
     puts "************* The New York Times 10 Best Books of 2017 *************"
     puts ""
     Book.all.each.with_index(1) do |book, i|
-        puts "#{i}. #{book.name.upcase}"
+      puts "#{i}. #{book.name.upcase}"
         #puts "  author:" + " #{book.author}"
         #puts "  genre:" + " #{book.genre}"
         #puts "  review:" + " #{book.url}"
